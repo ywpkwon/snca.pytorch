@@ -84,7 +84,7 @@ else:
     lemniscate = LinearAverage(args.low_dim, ndata, args.temperature, args.memory_momentum)
 
 # define loss function
-criterion = NCACrossEntropy(torch.LongTensor(trainloader.dataset.train_labels))
+criterion = NCACrossEntropy(torch.LongTensor(trainloader.dataset.targets))
 
 if use_cuda:
     net.cuda()
